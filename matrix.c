@@ -17,6 +17,10 @@ int main()
     struct timeval tv1, tv2;
     struct timezone tz;
     double elapsed;
+
+    int devices = omp_get_default_device();
+    printf("devices: %d \n", devices);
+
     for (int n = 1; n < 5; n++)
     {
         omp_set_num_threads(n);
